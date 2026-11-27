@@ -1,4 +1,4 @@
-class TodoList:
+п»їclass TodoList:
     def __init__(self):
         self.tasks = []
 
@@ -7,9 +7,9 @@ class TodoList:
 
     def add_task(self, text):
         if not text.strip():
-            raise ValueError("Текст задачи не может быть пустым")
+            raise ValueError("РўРµРєСЃС‚ Р·Р°РґР°С‡Рё РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹Рј")
         if len(text) > 100:
-            raise ValueError("Текст задачи слишком длинный")
+            raise ValueError("РўРµРєСЃС‚ Р·Р°РґР°С‡Рё СЃР»РёС€РєРѕРј РґР»РёРЅРЅС‹Р№")
         self.tasks.append({"text": text, "done": False})
 
     def mark_done(self, index):
