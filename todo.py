@@ -19,3 +19,6 @@ class TodoList:
 
     def count_tasks(self):
         return len(self.tasks)
+
+    def get_done_tasks(self):
+        return [task for task in self.tasks if task["done"]]

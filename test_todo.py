@@ -41,3 +41,12 @@ def test_count_tasks():
     todo.add_task("A")
     todo.add_task("B")
     assert todo.count_tasks() == 2
+
+def test_get_done_tasks():
+    todo = TodoList()
+    todo.add_task("Сделано")
+    todo.add_task("Не сделано")
+    todo.mark_done(0)
+    done_tasks = todo.get_done_tasks()
+    assert len(done_tasks) == 1
+    assert done_tasks[0]["text"] == "Сделано"
