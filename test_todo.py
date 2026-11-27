@@ -20,3 +20,11 @@ def test_mark_task_as_done():
     todo.add_task("Сделать уроки")
     todo.mark_done(0)
     assert todo.get_tasks()[0]["done"] is True
+
+def test_delete_task():
+    todo = TodoList()
+    todo.add_task("Задача 1")
+    todo.add_task("Задача 2")
+    todo.delete_task(0)
+    assert len(todo.get_tasks()) == 1
+    assert todo.get_tasks()[0]["text"] == "Задача 2"
