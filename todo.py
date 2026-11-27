@@ -28,3 +28,6 @@ class TodoList:
 
     def edit_task(self, index, new_text):
         self.tasks[index]["text"] = new_text
+
+    def find_tasks(self, keyword):
+        return [task for task in self.tasks if keyword.lower() in task["text"].lower()]

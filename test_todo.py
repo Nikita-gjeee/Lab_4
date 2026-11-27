@@ -65,3 +65,11 @@ def test_edit_task():
     todo.add_task("Старое название")
     todo.edit_task(0, "Новое название")
     assert todo.get_tasks()[0]["text"] == "Новое название"
+
+def test_find_task():
+    todo = TodoList()
+    todo.add_task("Купить молоко")
+    todo.add_task("Купить хлеб")
+    results = todo.find_tasks("молоко")
+    assert len(results) == 1
+    assert results[0]["text"] == "Купить молоко"
