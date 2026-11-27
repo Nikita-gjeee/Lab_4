@@ -1,4 +1,5 @@
 ﻿from todo import TodoList
+import pytest
 
 def test_empty_todo_list():
     todo = TodoList()
@@ -73,3 +74,8 @@ def test_find_task():
     results = todo.find_tasks("молоко")
     assert len(results) == 1
     assert results[0]["text"] == "Купить молоко"
+
+def test_mark_done_invalid_index():
+    todo = TodoList()
+    with pytest.raises(IndexError):
+        todo.mark_done(5)
