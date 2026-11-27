@@ -25,3 +25,6 @@ class TodoList:
 
     def get_pending_tasks(self):
         return [task for task in self.tasks if not task["done"]]
+
+    def edit_task(self, index, new_text):
+        self.tasks[index]["text"] = new_text

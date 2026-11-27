@@ -59,3 +59,9 @@ def test_get_pending_tasks():
     pending = todo.get_pending_tasks()
     assert len(pending) == 1
     assert pending[0]["text"] == "Не сделано"
+
+def test_edit_task():
+    todo = TodoList()
+    todo.add_task("Старое название")
+    todo.edit_task(0, "Новое название")
+    assert todo.get_tasks()[0]["text"] == "Новое название"
