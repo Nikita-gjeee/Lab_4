@@ -4,3 +4,6 @@ class TodoList:
 
     def get_tasks(self):
         return self.tasks
+
+    def add_task(self, text):
+        self.tasks.append({"text": text, "done": False})
