@@ -22,3 +22,6 @@ class TodoList:
 
     def get_done_tasks(self):
         return [task for task in self.tasks if task["done"]]
+
+    def get_pending_tasks(self):
+        return [task for task in self.tasks if not task["done"]]
