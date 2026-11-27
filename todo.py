@@ -16,3 +16,6 @@ class TodoList:
 
     def clear_tasks(self):
         self.tasks.clear()
+
+    def count_tasks(self):
+        return len(self.tasks)

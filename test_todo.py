@@ -35,3 +35,9 @@ def test_clear_all_tasks():
     todo.add_task("Задача 2")
     todo.clear_tasks()
     assert todo.get_tasks() == []
+
+def test_count_tasks():
+    todo = TodoList()
+    todo.add_task("A")
+    todo.add_task("B")
+    assert todo.count_tasks() == 2
