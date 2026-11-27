@@ -7,3 +7,5 @@ class TodoList:
 
     def add_task(self, text):
         self.tasks.append({"text": text, "done": False})
+    def mark_done(self, index):
+        self.tasks[index]["done"] = True
