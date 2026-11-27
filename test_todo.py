@@ -28,3 +28,10 @@ def test_delete_task():
     todo.delete_task(0)
     assert len(todo.get_tasks()) == 1
     assert todo.get_tasks()[0]["text"] == "Задача 2"
+
+def test_clear_all_tasks():
+    todo = TodoList()
+    todo.add_task("Задача 1")
+    todo.add_task("Задача 2")
+    todo.clear_tasks()
+    assert todo.get_tasks() == []
