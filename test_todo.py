@@ -88,3 +88,8 @@ def test_sort_tasks():
     todo.sort_tasks()
     # Выполненные должны уйти в конец
     assert todo.get_tasks()[-1]["text"] == "Выполнено"
+
+def test_add_task_max_length():
+    todo = TodoList()
+    with pytest.raises(ValueError):
+        todo.add_task("a" * 101) # Больше 100 символов

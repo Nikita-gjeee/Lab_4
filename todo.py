@@ -6,6 +6,8 @@ class TodoList:
         return self.tasks
 
     def add_task(self, text):
+        if len(text) > 100:
+            raise ValueError("Текст задачи слишком длинный")
         self.tasks.append({"text": text, "done": False})
 
     def mark_done(self, index):
