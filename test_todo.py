@@ -79,3 +79,12 @@ def test_mark_done_invalid_index():
     todo = TodoList()
     with pytest.raises(IndexError):
         todo.mark_done(5)
+
+def test_sort_tasks():
+    todo = TodoList()
+    todo.add_task("Выполнено")
+    todo.add_task("Не выполнено")
+    todo.mark_done(0)
+    todo.sort_tasks()
+    # Выполненные должны уйти в конец
+    assert todo.get_tasks()[-1]["text"] == "Выполнено"

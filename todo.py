@@ -31,3 +31,6 @@ class TodoList:
 
     def find_tasks(self, keyword):
         return [task for task in self.tasks if keyword.lower() in task["text"].lower()]
+
+    def sort_tasks(self):
+        self.tasks.sort(key=lambda x: x["done"])
